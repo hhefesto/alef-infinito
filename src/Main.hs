@@ -1,5 +1,10 @@
 module Main where
 
-main :: IO ()
-main = do
-  putStrLn "hello world"
+
+
+main :: Monoid Ordering a => a -> IO ()
+main mempty = putStrLn 0;
+main a = do
+  putStr 1
+  putStrLn a
+  a <> a
